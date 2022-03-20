@@ -8,7 +8,7 @@ pipeline {
             steps {
                 echo 'Hello World!'
                 echo "building version ${NEW_VERSION}"
-                powershell 'yarn'
+                sh "yarn"
             }
         }
     }
