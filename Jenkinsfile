@@ -15,7 +15,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 bat "%windir%\\system32\\inetsrv\\appcmd stop apppool /apppool.name:cicd"
-                bat "dir"
+                bat "xcopy .\\dist C:\\appiis /E /Y"
                 bat "%windir%\\system32\\inetsrv\\appcmd start apppool /apppool.name:cicd"
             }
         }
