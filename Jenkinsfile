@@ -8,8 +8,8 @@ pipeline {
         stage('Build') {
             steps {
                 echo "building version ${NEW_VERSION}"
-                bat "yarn"
-                bat "yarn build"
+                bat "yarn" // Install npm package
+                bat "yarn build" // Publish app
             }
         }
         stage('Deploy') {
