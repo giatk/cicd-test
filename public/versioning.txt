@@ -1,7 +1,1 @@
-commit 333dfe2493483b69e5d1d3ddd458dde9cc30db5d
-Author:     giatkt1598 <giatkt1598@gmail.com>
-AuthorDate: Mon Mar 21 22:18:01 2022 +0700
-Commit:     giatkt1598 <giatkt1598@gmail.com>
-CommitDate: Mon Mar 21 22:18:01 2022 +0700
-
-    day la message commit ahihi
+{"version":"1.0.1","commitInfo":"commit 60112d80a42e453b2b33c1e9c855e4cd777a8b1a\nAuthor:     giatkt1598 <giatkt1598@gmail.com>\nAuthorDate: Mon Mar 21 22:48:17 2022 +0700\nCommit:     giatkt1598 <giatkt1598@gmail.com>\nCommitDate: Mon Mar 21 22:48:17 2022 +0700\n\n    0.0.335"}

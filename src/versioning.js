@@ -8,8 +8,15 @@ revision = childProcess
     .execSync(cmd3)
     .toString().trim()
 
-fs.writeFile('./public/versioning.txt', revision, (err) => {
+const data = {
+    version: "1.0.1",
+    commitInfo: revision,
+}
+
+fs.writeFile('./public/versioning.txt', JSON.stringify(data), (err) => {
     if (err) {
         console.log(err);
     }
 });
+
+console.log(data);

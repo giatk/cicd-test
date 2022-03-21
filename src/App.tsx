@@ -3,6 +3,7 @@ import logo from './logo.svg'
 import './App.css'
 import { getLastCommit } from "git-last-commit";
 import { spawn } from "child_process";
+
 function App() {
   const [count, setCount] = useState(0)
   const gitCommand = "git rev-parse HEAD";
@@ -11,7 +12,7 @@ function App() {
     Promise.all([
       fetch('/versioning.txt').then(x => x.text()),
     ]).then(([sampleResp]) => {
-      setData(sampleResp);
+      setData(JSON.parse(sampleResp).commitInfo);
     });
   }, []);
 
