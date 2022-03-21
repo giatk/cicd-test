@@ -1,1 +1,1 @@
-{"version":"1.0.1","commitInfo":"commit 60112d80a42e453b2b33c1e9c855e4cd777a8b1a\nAuthor:     giatkt1598 <giatkt1598@gmail.com>\nAuthorDate: Mon Mar 21 22:48:17 2022 +0700\nCommit:     giatkt1598 <giatkt1598@gmail.com>\nCommitDate: Mon Mar 21 22:48:17 2022 +0700\n\n    0.0.335"}
+{"version":"1.0.1","commitInfo":"commit 8005ee4fb1f98c05a44626e64dbc29c312124cf1\nAuthor:     giatkt1598 <giatkt1598@gmail.com>\nAuthorDate: Mon Mar 21 23:05:25 2022 +0700\nCommit:     giatkt1598 <giatkt1598@gmail.com>\nCommitDate: Mon Mar 21 23:05:25 2022 +0700\n\n    0.0.336"}

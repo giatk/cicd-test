@@ -13,10 +13,17 @@ const data = {
     commitInfo: revision,
 }
 
+fs.readFile("./package.json", { encoding: 'utf8' }, (err, data) => {
+    const jsonObj = JSON.parse(data);
+    data.version = jsonObj.version;
+})
+
 fs.writeFile('./public/versioning.txt', JSON.stringify(data), (err) => {
     if (err) {
         console.log(err);
     }
 });
+
+
 
 console.log(data);
