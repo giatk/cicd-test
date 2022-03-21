@@ -1,9 +1,18 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import logo from './logo.svg'
 import './App.css'
-
+import { getLastCommit } from "git-last-commit";
+import { spawn } from "child_process";
 function App() {
   const [count, setCount] = useState(0)
+  const gitCommand = "git rev-parse HEAD";
+
+  useEffect(() => {
+
+    const child = spawn('pwd');
+    console.log(child);
+
+  }, []);
 
   return (
     <div className="App">
