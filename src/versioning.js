@@ -1,29 +1,35 @@
 const fs = require('fs');
 const childProcess = require('child_process');
 
-var cmd3 = "git show HEAD --pretty=fuller --quiet"
+var commitInfoFetchCmd = "git show HEAD --pretty=fuller --quiet"
+var upVersionCmd = "npm version patch";
+
+var srcFolder = ".\\versioning.txt"
+var destinationFolder = ".\\public\\versioning.txt"
 
 
-revision = childProcess
-    .execSync(cmd3)
-    .toString().trim()
+commitInfo = childProcess
+    .execSync(commitInfoFetchCmd)
+    .toString().trim();
 
-const data = {
+childProcess.execSync(upVersionCmd);
+
+const versionInfo = {
     version: "1.0.1",
-    commitInfo: revision,
+    commitInfo,
 }
 
 fs.readFile("./package.json", { encoding: 'utf8' }, (err, data) => {
     const jsonObj = JSON.parse(data);
-    data.version = jsonObj.version;
+    versionInfo.version = jsonObj.version;
+    fs.writeFile(srcFolder, JSON.stringify(versionInfo), (err) => {
+        err && console.log(err);
+        fs.copyFile(srcFolder, destinationFolder, (err) => {
+            err && console.log(err);
+            console.log(versionInfo);
+        })
+    });
 })
 
-fs.writeFile('./public/versioning.txt', JSON.stringify(data), (err) => {
-    if (err) {
-        console.log(err);
-    }
-});
 
 
-
-console.log(data);
