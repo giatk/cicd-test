@@ -1,7 +1,7 @@
 {
   "name": "cicd",
   "private": true,
-  "version": "0.0.326",
+  "version": "0.0.327",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
