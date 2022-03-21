@@ -6,18 +6,23 @@ import { spawn } from "child_process";
 function App() {
   const [count, setCount] = useState(0)
   const gitCommand = "git rev-parse HEAD";
-
+  const [data, setData] = useState("");
   useEffect(() => {
-
-    const child = spawn('pwd');
-    console.log(child);
-
+    Promise.all([
+      fetch('/versioning.txt').then(x => x.text()),
+    ]).then(([sampleResp]) => {
+      setData(sampleResp);
+    });
   }, []);
 
   return (
     <div className="App">
       <header className="App-header">
-        hello 21
+        <pre style={{
+          textAlign: 'left'
+        }}>
+          {data}
+        </pre>
         <img src={logo} className="App-logo" alt="logo" />
         <p>Hello Vite + React!</p>
         <p>
