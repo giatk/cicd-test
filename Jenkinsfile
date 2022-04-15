@@ -11,7 +11,7 @@ pipeline {
                 // bat "yarn" // Install npm package
                 // bat "yarn build" // Publish app
                 bat 'ren dist cicd_app_v2.1.0'
-                archiveArtifacts artifacts: 'dist/**', followSymlinks: false
+                archiveArtifacts artifacts: 'cicd_app_v2.1.0/**', followSymlinks: false
             }
         }
         // stage('Deploy') {
