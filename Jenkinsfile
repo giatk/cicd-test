@@ -12,8 +12,10 @@ pipeline {
                 // bat "yarn build" // Publish app
                 // bat "ren dist cicd_app_v3.0.${BUILD_NUMBER}"
                 // archiveArtifacts artifacts: "cicd_app_v3.0.${BUILD_NUMBER}/**", followSymlinks: false
-                currentBuild.result = 'ABORTED'
-                error('Stopping early…')
+                script {
+                    currentBuild.result = 'ABORTED'
+                    error('Stopping early…')
+                }
             }
         }
         // stage('Deploy') {
