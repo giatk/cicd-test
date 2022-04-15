@@ -14,7 +14,6 @@ pipeline {
                 // archiveArtifacts artifacts: "cicd_app_v3.0.${BUILD_NUMBER}/**", followSymlinks: false
                 script {
                     currentBuild.result = 'ABORTED'
-                    error('Stopping early…')
                 }
             }
         }
