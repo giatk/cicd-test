@@ -20,6 +20,7 @@ const versionInfo = {
 }
 
 fs.readFile("./package.json", { encoding: 'utf8' }, (err, data) => {
+    err && console.log(err);
     const jsonObj = JSON.parse(data);
     versionInfo.version = jsonObj.version;
     fs.writeFile(srcFolder, JSON.stringify(versionInfo), (err) => {

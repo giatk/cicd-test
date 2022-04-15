@@ -7,17 +7,19 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo "building version ${NEW_VERSION}"
-                bat "yarn" // Install npm package
-                bat "yarn build" // Publish app
+                // echo "building version ${NEW_VERSION}"
+                // bat "yarn" // Install npm package
+                // bat "yarn build" // Publish app
+                bat 'ren dist cicd_app_v2.1.0'
+                archiveArtifacts artifacts: 'dist/**', followSymlinks: false
             }
         }
-        stage('Deploy') {
-            steps {
-                bat "%windir%\\system32\\inetsrv\\appcmd stop apppool /apppool.name:cicd"
-                bat "xcopy .\\dist C:\\appiis\\cicd /E /Y"
-                bat "%windir%\\system32\\inetsrv\\appcmd start apppool /apppool.name:cicd"
-            }
-        }
+        // stage('Deploy') {
+        //     steps {
+        //         bat "%windir%\\system32\\inetsrv\\appcmd stop apppool /apppool.name:cicd"
+        //         bat "xcopy .\\dist C:\\appiis\\cicd /E /Y"
+        //         bat "%windir%\\system32\\inetsrv\\appcmd start apppool /apppool.name:cicd"
+        //     }
+        // }
     }
 }
