@@ -9,9 +9,10 @@ pipeline {
             steps {
                 // echo "building version ${NEW_VERSION}"
                 // bat "yarn" // Install npm package
-                bat "yarn build" // Publish app
-                bat "ren dist cicd_app_v3.0.${BUILD_NUMBER}"
-                archiveArtifacts artifacts: "cicd_app_v3.0.${BUILD_NUMBER}/**", followSymlinks: false
+                // bat "yarn build" // Publish app
+                // bat "ren dist cicd_app_v3.0.${BUILD_NUMBER}"
+                // archiveArtifacts artifacts: "cicd_app_v3.0.${BUILD_NUMBER}/**", followSymlinks: false
+                echo "${CHANGE_ID}"
             }
         }
         // stage('Deploy') {
